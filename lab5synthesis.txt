@@ -1,0 +1,16 @@
+*****************************
+* Lab 5 Synthesis Questions *
+*****************************
+Name(s): Maria Berova, Medha Gupta  
+NetID(s): mberova, medhag2
+
+
+-----------------------------------------------------------
+1) Alignment: 16
+   Reasoning: The alignment size of the allocator is 16 bytes. We can find the alignment size by checking the amount of bytes by which the block sizes increase. The minimum size we can get for a block is 32 bytes. However, if we increase our request size, we can make the allocator return a 48 byte block. This tells us that the block sizes increase by multiples of 16, meaning the alignment must be 16 bytes.
+
+-----------------------------------------------------------
+2) Boundary Tag Size: 16  
+   Reasoning: The maximum request to malloc that gives us a 32-byte block is 24 bytes. Past this size, the block size increases, which tells us that a 24-byte block must only contain the payload and boundary tags. We know that the payload is 24 bytes, so the boundary tags are 32-24=8 bytes. Overall, the boundary tags take up 8 bytes.
+
+-----------------------------------------------------------
